@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Drift</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="/send/style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<div id=center>
+		<div id=local>
+			<audio id=recording></audio>
+			<div>
+				<p id=msg-time></p>
+				<span id=time>Send a voice message!</span>
+				<p id=msg-record>Click the microphone to start recording</p>
+				<button id=recordButton>
+					<span class=microphone></span>
+				</button>
+				<button id="stopButton" disabled>
+					<span id=micexcontainer>
+						<span id=micex></span>
+					</span>
+					<span class=microphone></span>
+				</button>
+			</div>
+			<p id=msg-send></p>
+			<a id=upload><b>SEND</b></a>
+		</div>
+		<div id=iframe>
+			<a href="#" onClick="openPage()">
+				<span class=microphone></span>
+			</a>
+		</div>
+		</div>
+		<a id=mark href="https://driftmsg.tk" target="_blank">Powered by Drift</a>
+		<script src="/send/recorder.js"></script>
+		<script src="/send/script.js"></script>
+	</body>
+</html>

@@ -1,0 +1,107 @@
+body {
+	color: var(--color);
+	background-color: var(--background);
+	text-align: center;
+	font-family: bold;
+
+	--color: white;
+	--background: black;
+	--accent: red;
+}
+
+@font-face {
+    font-family: "bold";
+	src: url("Montserrat-Bold.otf") format('opentype');
+}
+
+@font-face {
+    font-family: "regular";
+	src: url("Montserrat-Regular.otf") format('opentype');
+}
+
+
+#time {
+	font-size: 4em;
+}
+
+#upload {
+	font-size: 2em;
+	width: 180px;
+	height: 50px;
+	line-height: 50px;
+	background-color: var(--accent);
+	color: var(--color);
+	display: none;
+	text-align: center;
+	text-decoration: none;
+}
+
+p {
+	font-family: regular;
+	padding-top: 15px;
+}
+
+#msg-time {
+	padding-top: 0px;
+}
+
+button {
+	cursor: pointer;
+}
+
+#recordButton, #stopButton, #iframe a {
+	outline: none;
+	border: none;
+	height: 50px;
+	width: 180px;
+	background-color: var(--accent);
+	display: inline-block;
+	text-align: center;
+}
+
+.microphone {
+	mask: url("microphone.svg");
+	height: 40px;
+	width: 40px;
+	mask-size: contain;
+	display: inline-block;
+	background-color: var(--color);
+	mask-size: cover;
+	margin-top: 5px;
+}
+
+#micexcontainer {
+	display: inline-block;
+	width: 0px;
+	background-color: blue;
+	margin-right: -4px;
+}
+
+#micex {
+	mask: url("cross.svg");
+	height: 40px;
+	width: 40px;
+	mask-size: contain;
+	display: inline-block;
+	background-color: var(--color);
+	mask-size: cover;
+	margin-top: 5px;
+}
+
+#recordButton:disabled, #stopButton:disabled {
+  display: none;
+}
+
+#mark {
+	position: absolute;
+	bottom: 5px;
+	left: 50%;
+	transform: translate(-50%, 0px);
+	font-family: regular;
+	color: var(--color);
+	text-decoration: none;
+}
+
+#mark:hover {
+	text-decoration: underline;
+}
