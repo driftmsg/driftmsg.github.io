@@ -1,4 +1,4 @@
-var server = "//localhost";
+var server = "//beatsturning.com/games/drift";
 var maxLength = 5;
 
 var timeoutRemove;
