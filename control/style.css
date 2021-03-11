@@ -1,0 +1,46 @@
+body {
+	background-color: #e3e3e3;
+	margin: 0px;
+	font-family: regular;
+	text-align: center;
+}
+
+@font-face {
+    font-family: "bold";
+	src: url("../send/Montserrat-Bold.otf") format('opentype');
+}
+
+@font-face {
+    font-family: "regular";
+	src: url("../send/Montserrat-Regular.otf") format('opentype');
+}
+
+h1 {
+	font-size: 4em;
+	font-family: bold;
+}
+
+h2 {
+	font-size: 2.5em;
+	font-family: bold;
+}
+
+input[type=color] {
+	border: none;
+	padding: 0px;
+	width: 30px;
+	height: 30px;
+	vertical-align: middle
+}
+
+#colorcontainer label {
+	vertical-align: middle;
+	display: inline-block;
+	width: 110px;
+	text-align: left;
+}
+
+#colorcontainer .spacer {
+	height: 10px;
+	display: block;
+}

@@ -2,12 +2,22 @@
 <html>
 	<head>
 		<title>Control Panel</title>
-		<link rel="stylesheet" type="text/css" href="/send/style.css">
+		<link rel="stylesheet" type="text/css" href="/control/style.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	</head>
 	<body>
-
-
+		<h1>Control Panel</h1>
+		<div id=colorcontainer>
+			<h2>Color Scheme</h2>
+			<input type="color" id=colortext name="colortext" value="#000000">
+			<label for="colortext">Text</label>
+			<div class=spacer></div>
+			<input type="color" id=coloraccent name="coloraccent" value="#ee00ff">
+			<label for="coloraccent">Accent</label>
+			<div class=spacer></div>
+			<input type="color" id=colorbackground name="colorbackground" value="#e3e3e3">
+			<label for="colorbackground">Background</label>
+		</div>
 		<script src="/control/script.js"></script>
 	</body>
 </html>

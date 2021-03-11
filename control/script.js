@@ -1,21 +1,27 @@
 var server = "//beatsturning.com/games/drift";
 
+var user;
+
+var iframeSrc = "";
+
 function checkCookie() {
 	var checkingToken = getCookie("logintoken");
 	if (checkingToken == "") {
-		//window.location.replace("../login");
 		alert("not found");
+		//window.location.replace("../login");
 	} else {
 		$.get(server + "/login/checkToken.php?token=" + btoa(checkingToken), function(data) {
 			if (data["success"] == 1) {
 				console.log("token accepted");
+				iframeSrc = "<iframe src='//" + window.location.hostname + "/send#" + user + "'></iframe>";
+				console.log(iframeSrc);
 				setTimeout(function() {
 					checkCookie();
 				}, 30000);
 			} else {
 				document.cookie = "cookiename= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
+				alert("wrong");
 				//window.location.replace("../login");
-				alert("fail");
 			}
 		});
 	}
