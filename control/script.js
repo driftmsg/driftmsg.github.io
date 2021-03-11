@@ -13,7 +13,8 @@ function checkCookie() {
 				}, 30000);
 			} else {
 				document.cookie = "cookiename= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
-				window.location.replace("../login");
+				//window.location.replace("../login");
+				alert("fail");
 			}
 		});
 	}
