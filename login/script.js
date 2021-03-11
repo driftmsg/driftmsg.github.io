@@ -51,7 +51,7 @@ function login() {
 				if (data.length != 30) {
 					alert("error");
 				} else {
-					document.cookie = "logintoken=" + data; 
+					document.cookie = "logintoken=" + data + ";path=/"; 
 					window.location.replace("../control");
 				}
 			}
