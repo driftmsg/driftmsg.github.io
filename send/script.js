@@ -91,6 +91,8 @@ function scanLength() {
 }
 
 function startRecording() {
+	document.getElementById("namegrouplabel").innerHTML = "Enter your name";
+	document.getElementById("namegroup").style.display = "none";
 	clearTimeout(timeoutRemove);
 	document.getElementById("time").innerHTML = "Send a voice message!";
 	document.getElementById("msg-time").innerHTML = "";
@@ -159,6 +161,7 @@ function startRecording() {
 
 function stopRecording(forced) {
 	clearInterval(lengthFunction);
+	document.getElementById("namegroup").style.display = "block";
 	var displaySeconds = Math.round(length);
 	if (displaySeconds == 1) {
 		document.getElementById("time").innerHTML = "1 second";
@@ -212,24 +215,29 @@ function createDownloadLink(blob) {
 	upload.href="#" + user;
 	upload.addEventListener("click", function(event){
 		if (sent == 0) {
-			sent = 1;
-			upload.innerHTML = "<b>SENDING</b>";
-			var xhr = new XMLHttpRequest();
-			xhr.onload = function(e) {
-				if(this.readyState === 4) {
-					upload.innerHTML = "<b>SENT!</b>";
-					document.getElementById("msg-send").innerHTML = "";
-					console.log("Server returned: ", e.target.responseText);
-					document.getElementById("msg-record").innerHTML = "Click the microphone to send new recording";
-					timeoutRemove = setTimeout(function() {
-						document.getElementById("time").innerHTML = "Send a voice message!";
-					}, 1500);
-				}
-			};
-			var fd = new FormData();
-			fd.append("audio_data", blob, filename);
-			xhr.open("POST", server + "/send/send.php?user=" + btoa(unescape(encodeURIComponent(user))) + "&name=ayyy", true);
-			xhr.send(fd);
+			if (document.getElementById("name").value == "") {
+				document.getElementById("namegrouplabel").innerHTML = "Please enter your name";
+			} else {
+				sent = 1;
+				upload.innerHTML = "<b>SENDING</b>";
+				var xhr = new XMLHttpRequest();
+				xhr.onload = function(e) {
+					if(this.readyState === 4) {
+						upload.innerHTML = "<b>SENT!</b>";
+						document.getElementById("msg-send").innerHTML = "";
+						console.log("Server returned: ", e.target.responseText);
+						document.getElementById("msg-record").innerHTML = "Click the microphone to send new recording";
+						document.getElementById("namegroup").style.display = "none";
+						timeoutRemove = setTimeout(function() {
+							document.getElementById("time").innerHTML = "Send a voice message!";
+						}, 1500);
+					}
+				};
+				var fd = new FormData();
+				fd.append("audio_data", blob, filename);
+				xhr.open("POST", "/send/send.php?user=" + btoa(unescape(encodeURIComponent(user))) + "&name=" + btoa(unescape(encodeURIComponent(document.getElementById("name").value))), true);
+				xhr.send(fd);
+			}
 		}
 	});
 }

@@ -105,3 +105,22 @@ button {
 #mark:hover {
 	text-decoration: underline;
 }
+
+label {
+	font-family: regular;
+	display: block;
+	margin-top: 25px;
+	margin-bottom: 15px;
+}
+
+input[type=text] {
+	font-size: 1em;
+	border: 2px solid var(--accent);
+	padding: 5px;
+	width: 90%;
+	max-width: 300px;
+}
+
+#namegroup {
+	display: none;
+}
