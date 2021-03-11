@@ -3,7 +3,8 @@ var server = "//beatsturning.com/games/drift";
 function checkCookie() {
 	var checkingToken = getCookie("logintoken");
 	if (checkingToken == "") {
-		window.location.replace("../login");
+		//window.location.replace("../login");
+		alert("not found");
 	} else {
 		$.get(server + "/login/checkToken.php?token=" + btoa(checkingToken), function(data) {
 			if (data["success"] == 1) {
