@@ -228,7 +228,7 @@ function createDownloadLink(blob) {
 			};
 			var fd = new FormData();
 			fd.append("audio_data", blob, filename);
-			xhr.open("POST", "send.php?user=" + btoa(unescape(encodeURIComponent(user))) + "&name=ayyy", true);
+			xhr.open("POST", server + "/send.php?user=" + btoa(unescape(encodeURIComponent(user))) + "&name=ayyy", true);
 			xhr.send(fd);
 		}
 	});
