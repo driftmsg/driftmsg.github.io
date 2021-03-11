@@ -1,4 +1,4 @@
-var server = "//localhost";
+var server = "//beatsturning.com/games/drift";
 
 function checkCookie() {
 	var checkingToken = getCookie("logintoken");
