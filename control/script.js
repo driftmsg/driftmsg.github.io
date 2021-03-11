@@ -13,7 +13,7 @@ function checkCookie() {
 		$.get(server + "/login/checkToken.php?token=" + btoa(checkingToken), function(data) {
 			if (data["success"] == 1) {
 				console.log("token accepted");
-				iframeSrc = "<iframe src='//" + window.location.hostname + "/send#" + user + "'></iframe>";
+				iframeSrc = "<iframe src='//" + window.location.hostname + "/send#" + data["user"] + "'></iframe>";
 				console.log(iframeSrc);
 				setTimeout(function() {
 					checkCookie();
